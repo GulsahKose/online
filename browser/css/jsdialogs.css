@@ -1277,3 +1277,8 @@ input[type='number']:hover::-webkit-outer-spin-button {
 #zoterolocale-label.jsdialog {
 	margin-inline-end: 7px;
 }
+
+#modal-dialog-fontsmissing {
+	min-width: 198px;
+	max-width: 600px;
+}
