@@ -40,8 +40,8 @@ class FocusCellSection extends CanvasSectionObject {
 	}
 
 	public onCellAddressChanged(): void {
-		this.size[0] = app.calc.cellCursorRectangle.pWidth;
-		this.size[1] = app.calc.cellCursorRectangle.pHeight;
+		this.size[0] = app.calc.cellCursorRectangle.pWidth * this.sectionProperties.maxRow;
+		this.size[1] = app.calc.cellCursorRectangle.pHeight * this.sectionProperties.maxCol;
 		this.setPosition(
 			app.calc.cellCursorRectangle.pX1,
 			app.calc.cellCursorRectangle.pY1,
