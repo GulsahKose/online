@@ -396,12 +396,8 @@ class GraphicSelection {
 				app.socket.sendMessage('rendershapeselection mimetype=image/svg+xml');
 			}
 
-			// scroll to selected graphics, if it has no cursor
-			if (
-				!app.map._docLayer.isWriter() &&
-				this.rectangle &&
-				app.map._docLayer._allowViewJump()
-			) {
+			// scroll to selected graphics
+			if (this.rectangle && app.map._docLayer._allowViewJump()) {
 				if (
 					(!app.isPointVisibleInTheDisplayedArea([
 						this.rectangle.x1,
@@ -411,8 +407,6 @@ class GraphicSelection {
 							this.rectangle.x2,
 							this.rectangle.y2,
 						])) &&
-					!TextSelections.getEndRectangle() &&
-					!(app.isFollowingEditor() || app.isFollowingUser()) &&
 					!app.map.calcInputBarHasFocus()
 				) {
 					app.map._docLayer.scrollToPos(
